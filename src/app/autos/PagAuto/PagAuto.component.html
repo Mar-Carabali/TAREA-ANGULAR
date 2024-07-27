@@ -1,0 +1,59 @@
+<div class="card">
+  <div class="card-header">
+    Vehiculo{{vehiculo?.marca}} {{vehiculo?.modelo}} 
+  </div>
+  <div class="card-body">
+    <form [formGroup]="formulario">
+      <div class="row">
+          <div class="col-12">
+              <label>Codigo:</label>
+              <input class="form-control" formControlName="codigo">
+              <div class="text-danger" *ngIf="formulario.controls['codigo'].errors?.['required']">Requerido</div>
+          </div>
+          <div class="col-12">
+              <label>Marca:</label>
+              <input class="form-control" formControlName="marca">
+              <div class="text-danger" *ngIf="formulario.controls['marca'].errors?.['required']">Requerido</div>
+          </div>
+          <div class="col-12">
+              <label>Modelo:</label>
+              <input class="form-control" formControlName="modelo">
+              <div class="text-danger" *ngIf="formulario.controls['modelo'].errors?.['required']">Requerido</div>
+          </div>
+          <div class="col-12">
+            <label  class="col-sm-2 col-form-label">Año:</label>
+              <input type="text" class="form-control"  name="anio" formControlName="anio">
+              <div class="text-danger" *ngIf="formulario.controls['anio'].errors?.['required']">Requerido</div>
+          </div>
+
+          <div class="col-12">
+            <label  class="col-sm-2 col-form-label">Kilometraje:</label>
+            
+              <input type="text" class="form-control"  name="kilometraje"
+                formControlName="kilometraje">
+                <div class="text-danger" *ngIf="formulario.controls['kilometraje'].errors?.['required']">Requerido</div>
+          </div>
+          <div class="col-12">
+            <label  class="col-sm-2 col-form-label">Precio:</label>
+            
+              <input type="number" class="form-control"  name="precio" formControlName="precio">
+              <div class="text-danger" *ngIf="formulario.controls['precio'].errors?.['required']">Requerido</div>
+          </div>
+          <div class="col-12">
+            <label  class="col-sm-2 col-form-label">Calificación:</label>
+            
+              <input type="number" class="form-control"  name="calificacion"
+                formControlName="calificacion">
+                <div class="text-danger" *ngIf="formulario.controls['calificacion'].errors?.['required']">Requerido</div>
+          </div>
+          </div>
+          <div class="row">
+              <div class="col-3">
+              <button class="btn btn-info" (click)="guardar()">Guardar</button>
+          </div>
+      </div>
+  </form>
+   
+      
+  </div>
+</div>
